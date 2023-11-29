@@ -15,6 +15,7 @@ export class InactivePostsComponent implements OnInit {
     this.postSrv.recuperaPosts().then((element) =>{
       this.posts = element
       console.log("Posts:", this.posts)
+
     })
   }
 

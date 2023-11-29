@@ -1,14 +1,21 @@
 <div class="container mt-3">
   <div *ngFor="let post of posts">
     <div *ngIf="!post.active">
-      <div class="card mt-4">
+      <div
+        [ngClass]="{
+          'bg-dark text-light': post.type === 'politic',
+          'bg-info': post.type === 'education',
+          'bg-warning': post.type === 'news'
+        }"
+        class="card mt-4"
+      >
         <h5 class="card-header">Post</h5>
         <div class="card-body">
           <h5 class="card-title">{{ post.title }}</h5>
           <p class="card-text">
             {{ post.body }}
           </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a class="btn btn-primary">Attiva post</a>
         </div>
       </div>
     </div>
